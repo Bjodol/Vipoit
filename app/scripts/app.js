@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch', 
+    'blackboard'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -23,6 +24,11 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/test', {
+        templateUrl: 'views/notetester.html',
+        controller: 'blackboardCtrl',
+        controllerAs: 'test'
       })
       .when('/about', {
         templateUrl: 'views/about.html',

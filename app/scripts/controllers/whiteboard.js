@@ -10,6 +10,6 @@
 angular.module('whiteboard',[
 	'blackboard'
 	])
-  .controller('whiteboardCtrl', ['blackboardService'] function () {
+  .controller('whiteboardCtrl', function(blackboardService) {
     this.Notes = blackboardService.notes;
   });
