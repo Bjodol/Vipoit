@@ -4,7 +4,9 @@ angular.module('note', ['blackboard'])
 
 		$scope.addNote = function(note){
 			var newNote = angular.copy(note);
+			
 			blackboardService.notes.push(newNote);
+		
 		}
 
 	})
