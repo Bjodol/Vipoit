@@ -15,5 +15,5 @@ angular.module('blackboard', [
 		//Will probably come more in the future
 	})
   .service('blackboardService', function (){
-    this.Notes = [];
+    this.notes = [];
   });

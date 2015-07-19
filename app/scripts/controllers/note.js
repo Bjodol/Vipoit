@@ -1,17 +1,13 @@
 
 angular.module('note', ['blackboard'])
-	.controller('NoteCtrl', function($scope, blackboardService){
-		
-		this.note = {
-			"Id": id,
-			"Content": content,
-			"Color": color,
-			"Author": author,
-			"Position": Position
+	.controller('noteCtrl', function($scope, blackboardService){
+
+		$scope.note = {
 		}
 
 		$scope.addNote = function(){
-			blackboardService.notes.push(this.note);
+			blackboardService.notes.push($scope.note);
+			console.log(blackboardService.notes);
 		}
 
 	})

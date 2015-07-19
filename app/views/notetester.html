@@ -1,18 +1,25 @@
+<div ng-controller="noteCtrl">	
+	<p> ID </p> <input type="text" ng-model="note.Id"></input="text">
 
-<p> ID </p> <input type="text" name="id" ng-model="note.Id"></input="text">
+	<p> Content </p><input type="text"</input="text" ng-model="note.Content">
 
-<p> Content </p><input type="text"</input="text" ng-model="note.Content">
+	<p> Color </p><input type="text"</input="text" ng-model="note.Color">
 
-<p> Color </p><input type="text"</input="text" ng-model="note.Color">
+	<p> Author </p><input type="text"</input="text" ng-model="note.Author">
 
-<p> Author </p><input type="text"</input="text" ng-model="note.Author">
+	<p> Position </p><input type="text"/input="text" ng-model="note.Position">
 
-<p> Position </p><input type="text"/input="text" ng-model="note.Position">
-
-<p>
-Add note
-</p>
-<button ng-click="addNote($scope.note)"> Add Note </button>
+	<p>
+	Add note
+	</p>
+	<button ng-click="addNote($scope.note)"> Add Note </button>
+</div>
+<div ng-controller="whiteboardCtrl">
+	<div ng-repeat="note in notes track by $index">
+		{{note.Id}}
+		{{note.Content}}
+	</div>
+</div>
 
 
 
