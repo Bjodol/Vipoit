@@ -1,28 +1,9 @@
-	<div class="col-sm-8">
-	<div ng-controller="whiteboardCtrl">
-		<div ng-repeat="note in notes track by $index">
-			{{note.Id}}
-			{{note.Content}}
-		</div>
-	</div>
-	</div>
-<div class="col-sm-4">
-<div ng-controller="noteCtrl">	
-	<p> ID </p> <input type="text" ng-model="note.Id"></input="text">
-
-	<p> Content </p><input type="text"</input="text" ng-model="note.Content">
-
-	<p> Color </p><input type="text"</input="text" ng-model="note.Color">
-
-	<p> Author </p><input type="text"</input="text" ng-model="note.Author">
-
-	<p> Position </p><input type="text"/input="text" ng-model="note.Position">
-
-	<p>
-	Add note
-	</p>
-	<button class="addNoteButton" ng-click="addNote($scope.note)"> Add Note </button>
+<div class="col-sm-8">
+	<div ng-include src="'views/whiteboard.html'"></div>
 </div>
+<div class="col-sm-4">
+	<div ng-include src="'views/noteblock.html'">
+	</div>
 </div>
 
 

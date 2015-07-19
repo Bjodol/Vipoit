@@ -11,6 +11,5 @@ angular.module('whiteboard',[
 	'blackboard'
 	])
   .controller('whiteboardCtrl', function($scope, blackboardService) {
-  	console.log(blackboardService.notes);
     $scope.notes = blackboardService.notes;
   });

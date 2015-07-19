@@ -1,0 +1,14 @@
+<div ng-controller="noteCtrl">	
+	<p> Content </p><input type="text" ng-model="note.Content">
+
+	<p> Color </p><input type="text" ng-model="note.Color">
+
+	<p> Author </p><input type="text"ng-model="note.Author">
+
+	<p> Position </p><input type="text" ng-model="note.Position">
+
+	<p>
+	Add note
+	</p>
+	<button type="submit" ng-click="addNote(note)"> Add Note </button>
+</div>
