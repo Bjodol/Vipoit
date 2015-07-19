@@ -1,4 +1,4 @@
-<div ng-controller="whiteboardCtrl">
+<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
 	<div class="note " ng-repeat="note in notes track by $index">
 		{{note.Content}}
 		{{$index}}
