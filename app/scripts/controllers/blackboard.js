@@ -12,7 +12,7 @@ angular.module('blackboard', [
 	'whiteboard'
 	])
 	.controller('blackboardCtrl', function(){
-		
+		//Will probably come more in the future
 	})
   .service('blackboardService', function (){
     this.Notes = [];
