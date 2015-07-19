@@ -1,12 +1,12 @@
 <div ng-controller="noteCtrl">	
 <form  name="form" novalidate>
-	<p> Content </p><input type="text" ng-model="note.Content" required>
+	<p> Content </p><input class="note" type="text" ng-model="note.Content" required>
 
 	<p> Color </p><input type="text" ng-model="note.Color">
 
-	<p> Author </p><input type="text"ng-model="note.Author">
+	<input type="radio" class="yellowRadio" value="">
 
-	<p> Position </p><input type="text" ng-model="note.Position">
+
 
 </form>
 
@@ -15,6 +15,11 @@
 	</p>
 	<button 
 	ng-disabled="form.$invalid" class="btn add-btn" type="submit" ng-click="addNote(note)"> Add Note </button>
+
+	<p
+		class="help-block"
+		ng-show"You must fill in content in order to make a note"
+		>Fill in content in order to make a note</p>
 
 
 </div>

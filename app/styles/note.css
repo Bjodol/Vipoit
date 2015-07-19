@@ -11,6 +11,10 @@
 	background-color: #00CC00;
 }
 
+.add-btn:disabled{
+	background-color: gray;
+}
+
 .add-btn:hover{
 	background-color: #00FF00;
 }
