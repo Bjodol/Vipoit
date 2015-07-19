@@ -2,17 +2,22 @@
 <form  name="form" novalidate>
 	<p> Content </p><input class="note" type="text" ng-model="note.Content" required>
 
-	<p> Color </p><input type="text" ng-model="note.Color">
+	
 
-	<input type="radio" class="yellowRadio" value="">
+	<div class="btn-group" role="group">
+		<button id="greenButton"class="color-button" type="button"></button>
+		<button id="blueButton" class="color-button" type="button" ng-click="note={'background-color':'blue'}"></button>
+		<button id="yellowButton" class="color-button" type="button" ></button>
+		<button id="redButton" class="color-button" type="button"></button>
+		
+
+	</div>
 
 
 
 </form>
 
-	<p>
-	Add note
-	</p>
+	
 	<button 
 	ng-disabled="form.$invalid" class="btn add-btn" type="submit" ng-click="addNote(note)"> Add Note </button>
 

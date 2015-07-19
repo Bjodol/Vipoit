@@ -1,5 +1,13 @@
 <div ng-controller="whiteboardCtrl">
-	<div class="note" ng-repeat="note in notes track by $index">
+	<div class="note " ng-repeat="note in notes track by $index">
 		{{note.Content}}
+		{{$index}}
+		<a ng-click="delete(note)" class="btn"></span> Delete</a>
+
+
 	</div>
 </div>
+
+<!-- 
+<span class="glyphicon glyphicon-chevron-down"> 
+-->

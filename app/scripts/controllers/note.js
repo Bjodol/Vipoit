@@ -9,5 +9,20 @@ angular.module('note', ['blackboard'])
 		
 		}
 
+		$scope.delete =function(note){
+			var index = $scope.notes.indexOf(note);
+			console.log(index);
+			$scope.notes.splice(index, 1);
+
+		}
+
+
+
+
+		
+
+
+
+
 	})
 
