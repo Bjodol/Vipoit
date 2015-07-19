@@ -8,9 +8,12 @@
  * Controller of the vipoitApp
  */
 angular.module('blackboard', [
-	'noteController',
+	'note',
 	'whiteboard'
 	])
-  .service('blackboardService', function () {
+	.controller('blackboardCtrl', function(){
+		
+	})
+  .service('blackboardService', function (){
     this.Notes = [];
   });

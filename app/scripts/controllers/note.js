@@ -1,6 +1,6 @@
 
-angular
-	.module{'noteController'}.controller{'NoteCtrl', function($scope){
+angular.module('note', ['blackboard'])
+	.controller{'NoteCtrl', function($scope, blackboardService){
 		
 		this.note = {
 			"Id": id,
@@ -10,9 +10,9 @@ angular
 			"Position": Position;
 		}
 
-		this.notes = [];
-
-
+		$scope.addNote = function(){
+			blackboardService.notes.push(this.note);
+		}
 
 	}}
 
