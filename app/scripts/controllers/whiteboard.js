@@ -19,4 +19,15 @@ angular.module('whiteboard',[
 			blackboardService.notes.splice(index, 1);
 
 		}
+
+	$scope.gridsterOpts ={
+		defaultSizeX: 1,
+		defaultSizeY: 1,
+		resizable: {
+         enabled: false,
+         start: function(event, uiWidget, $element) {}, // optional callback fired when resize is started,
+         resize: function(event, uiWidget, $element) {}, // optional callback fired when item is resized,
+         stop: function(event, uiWidget, $element) {} // optional callback fired when item is finished resizing
+      }
+	}
   });
