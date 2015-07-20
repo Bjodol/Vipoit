@@ -1,9 +1,8 @@
 <div ng-controller="noteCtrl">	
 <form  name="form" novalidate>
-	<p> Content </p><input class="note" type="text" ng-model="note.Content" required>
+	<p> Content </p><input class="note" ng-style="note" type="text" ng-model="note.Content" required>
 
 	
-
 	<div class="btn-group" role="group">
 		<button id="greenButton"class="color-button" type="button"></button>
 		<button id="blueButton" class="color-button" type="button" ng-click="note={'background-color':'blue'}"></button>
