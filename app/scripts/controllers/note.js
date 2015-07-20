@@ -1,5 +1,5 @@
 
-angular.module('note', ['blackboard'])
+angular.module('note', ['blackboard', 'ngFitText'])
 	.controller('noteCtrl', function($scope, blackboardService){
 		
 		$scope.note = {};
