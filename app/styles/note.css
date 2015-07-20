@@ -1,18 +1,34 @@
 .note {
 	height: 250px;
-	width: 250px;
-	background-color: #FCF0AD;
+	width: 100%;
+	min-width: 250px;
 	text-align: left;
 	margin: 5px;
+	font:400 100px/1.0 'Just Another Hand', Helvetica, sans-serif;
 }
 
+.note-yellow {
+	background-color: #FCF0AD;
+}
 
-.noteBlue{
-	height: 250px;
-	width: 250px;
-	background-color: blue;
-	text-align: left;
-	margin: 5px;
+.note-light-blue {
+	background-color: #caf0f3;
+}
+
+.note-dark-blue {
+	background-color: #a4c2f4;
+}
+
+.note-pink {
+	background-color: #eedbf3;
+}
+
+.note-purple {
+	background-color: #b4a7d6;
+}
+
+.note-green {
+	background-color: #c5f3c5;
 }
 
 .edit-btn{
@@ -26,7 +42,6 @@
 	min-width: 50px;
 	background-color: #00CC00;
 	border-radius: 50%;
-
 }
 
 .add-btn:disabled{
@@ -40,30 +55,14 @@
 .color-button{
 	min-height: 30px;
 	min-width: 30px;
-
-	
+	margin: 2px;
+	border-radius: 10px;
 }
 
 .color-button:active{
 	border:solid black;
 }
 
-.color-button:focus {
-	border: solid black;
-}
-
-#greenButton{
-	background-color: green;
-}
-
-#blueButton{
-	background-color: blue;
-}
-
-#yellowButton{
-	background-color: #FCF0AD;
-}
-
-#redButton{
-	background-color: red;
+.color-button:hover {
+	opacity: 50%;
 }

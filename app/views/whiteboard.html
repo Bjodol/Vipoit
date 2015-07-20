@@ -1,8 +1,6 @@
 <div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
-	<div class="note " ng-repeat="note in notes track by $index">
-		{{note.Content}}
-		{{$index}}
-		
+	<div class="note" ng-class="note.Color" ng-repeat="note in notes track by $index">
+		{{note.Content}}		
 		<div class="dropdown">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
 		<span class="caret"></span></button>
