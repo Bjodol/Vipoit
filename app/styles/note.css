@@ -5,3 +5,65 @@
 	text-align: left;
 	margin: 5px;
 }
+
+
+.noteBlue{
+	height: 250px;
+	width: 250px;
+	background-color: blue;
+	text-align: left;
+	margin: 5px;
+}
+
+.edit-btn{
+	background-color: #FCF0AD;
+	color: black;
+	border: none;
+}
+
+.add-btn{
+	min-height: 50px;
+	min-width: 50px;
+	background-color: #00CC00;
+	border-radius: 50%;
+
+}
+
+.add-btn:disabled{
+	background-color: gray;
+}
+
+.add-btn:hover:enabled{
+	background-color: #00FF00;
+}
+
+.color-button{
+	min-height: 30px;
+	min-width: 30px;
+
+	
+}
+
+.color-button:active{
+	border:solid black;
+}
+
+.color-button:focus {
+	border: solid black;
+}
+
+#greenButton{
+	background-color: green;
+}
+
+#blueButton{
+	background-color: blue;
+}
+
+#yellowButton{
+	background-color: #FCF0AD;
+}
+
+#redButton{
+	background-color: red;
+}

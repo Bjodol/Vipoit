@@ -1,14 +1,30 @@
 <div ng-controller="noteCtrl">	
-	<p> Content </p><input type="text" ng-model="note.Content">
+<form  name="form" novalidate>
+	<p> Content </p><input class="note" type="text" ng-model="note.Content" required>
 
-	<p> Color </p><input type="text" ng-model="note.Color">
+	
 
-	<p> Author </p><input type="text"ng-model="note.Author">
+	<div class="btn-group" role="group">
+		<button id="greenButton"class="color-button" type="button"></button>
+		<button id="blueButton" class="color-button" type="button" ng-click="note={'background-color':'blue'}"></button>
+		<button id="yellowButton" class="color-button" type="button" ></button>
+		<button id="redButton" class="color-button" type="button"></button>
+		
 
-	<p> Position </p><input type="text" ng-model="note.Position">
+	</div>
 
-	<p>
-	Add note
-	</p>
-	<button type="submit" ng-click="addNote(note)"> Add Note </button>
+
+
+</form>
+
+	
+	<button 
+	ng-disabled="form.$invalid" class="btn add-btn" type="submit" ng-click="addNote(note)"> Add Note </button>
+
+	<p
+		class="help-block"
+		ng-show"You must fill in content in order to make a note"
+		>Fill in content in order to make a note</p>
+
+
 </div>
