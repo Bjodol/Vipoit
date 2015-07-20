@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/note.css">
+    <link rel="stylesheet" type="text/css" href="styles/workbench.css">
     <!-- endbuild -->
   </head>
   <body ng-app="vipoitApp">
@@ -34,7 +35,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">vipoit</a>
+            <a class="navbar-brand" href="#/"><img src="images/vipoit-logo.png" style="width: 130px; max-height:80px; margin:-8px;"></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -50,7 +51,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
     <div ng-view=""></div>
     </div>
 
