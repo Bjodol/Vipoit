@@ -2,12 +2,21 @@
 	<div class="note " ng-repeat="note in notes track by $index">
 		{{note.Content}}
 		{{$index}}
-		<a ng-click="delete(note)" class="btn"></span> Delete</a>
+		
+		<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+		<li><a ng-click="delete(note)">Delete</a></li>
+		<li><a href="#">Edit (todo)</a></li>
+		<li><a href="#">Share(todo)</a></li>
+		</ul>
+		</div>
 
 
 	</div>
 </div>
 
 <!-- 
-<span class="glyphicon glyphicon-chevron-down"> 
+
 -->

@@ -15,6 +15,12 @@
 	margin: 5px;
 }
 
+.edit-btn{
+	background-color: #FCF0AD;
+	color: black;
+	border: none;
+}
+
 .add-btn{
 	min-height: 50px;
 	min-width: 50px;
