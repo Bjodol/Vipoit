@@ -26,7 +26,7 @@ angular
         controllerAs: 'main'
       })
       .when('/test', {
-        templateUrl: 'views/notetester.html',
+        templateUrl: 'views/workbench.html',
         controller: 'blackboardCtrl',
         controllerAs: 'test'
       })
