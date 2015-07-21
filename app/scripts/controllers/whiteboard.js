@@ -13,6 +13,7 @@ angular.module('whiteboard',[
   .controller('whiteboardCtrl', function($scope, $window, blackboardService) {
     $scope.notes = blackboardService.notes;
 	$scope.greeting = "This function has not yet been added.";
+	var stage = new createjs.Stage("demoCanvas");
 
     $scope.delete =function(note){
 			var index = blackboardService.notes.indexOf(note);
@@ -34,7 +35,7 @@ angular.module('whiteboard',[
 
 	 $scope.init = function(){
 
-	 	var stage = new createjs.Stage("demoCanvas");
+	 	
 	 	var circle = new createjs.Shape();
 		circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
 		circle.x = 100;
@@ -45,10 +46,15 @@ angular.module('whiteboard',[
 		circle.addEventListener("pressmove", function(event) { })
 
 		circle.addEventListener("pressup", function(event) { })
+
+		circle.on("click", function(evt) {
+    	
+		});
 	
 		circle.on("pressmove", function(evt) {
 	 	 evt.target.x = evt.stageX;
    		 evt.target.y = evt.stageY; 	
+   		 stage.update();
 		})
 
 		circle.on("pressup", function(evt) { console.log("up"); })
@@ -56,6 +62,28 @@ angular.module('whiteboard',[
 		stage.addChild(circle);
 		stage.update();
 		console.log("Hei bJørn");
+	}
+
+	$scope.addObject = function()
+	{
+		console.log("Hei Alf!");
+		var note = new createjs.Shape();
+		note.graphics.beginFill("#FCF0AD").drawRect(0, 0, 250, 250);
+
+
+		note.on("pressmove", function(evt) {
+	 	 evt.target.x = evt.stageX;
+   		 evt.target.y = evt.stageY; 	
+   		 stage.update();
+		})
+
+		note.on("pressup", function(evt) { console.log("up"); })
+
+		
+
+		stage.addChild(note);
+
+		stage.update();
 	}
 
 

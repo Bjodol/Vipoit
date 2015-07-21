@@ -10,6 +10,8 @@ angular.module('note', ['blackboard'])
 			var newNote = angular.copy($scope.note);
 			blackboardService.notes.push(newNote);
 			console.log($scope.note.fontSize);
+
+			
 		}
 
 		$scope.textResize = function(){
