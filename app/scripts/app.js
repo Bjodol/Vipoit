@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch', 
+    'gridster',
     'blackboard'
   ])
   .config(function ($routeProvider) {

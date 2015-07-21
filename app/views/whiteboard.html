@@ -1,15 +1,36 @@
 <div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
-	<div class="note" ng-class="note.Color" ng-repeat="note in notes track by $index">
+
+		<!--
+			<div class="note" ng-class="note.Color" ng-repeat="note in notes track by $index">
 		{{note.Content}}		
 		<div class="dropdown">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
 		<span class="caret"></span></button>
 		<ul class="dropdown-menu">
 		<li><a ng-click="delete(note)">Delete</a></li>
-		<li><a data-toggle="modal"  data-target="#myEditModal">Edit (todo)</a></li>
+		<li><a data-toggle="modal" data-target="#myEditModal">Edit (todo)</a></li>
 		<li><a href="#">Share(todo)</a></li>
 		</ul>
-		</div>
+		</div> -->
+
+	<div gridster="gridsterOpts" >
+    <ul>
+        <li  class="note" ng-class="note.Color" gridster-item="note" data-sizex="1" data-sizey="1" ng-repeat="note in notes track by $index">
+        	{{note.Content}}
+        	<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<li><a ng-click="delete(note)">Delete</a></li>
+			<li><a data-toggle="modal" data-target="#myEditModal">Edit (todo)</a></li>
+			<li><a ng-click="doGreeting(greeting)">Share(todo)</a></li>
+			</ul>
+			</div>
+        </li>
+    </ul>
+</div>
+
+
 
 
 		<!-- Modal -->
@@ -21,7 +42,8 @@
 			    <h4 class="modal-title" id="myModalLabel">Edit Note</h4>
 			  </div>
 			  <div class="modal-body">
-			  <input class="note" type="text" >
+			  <input ng-model="notes[$index].Content" ng-class="note.Color" class="note" type="text" >
+
 
 			  </div>
 			  <div class="modal-footer">
