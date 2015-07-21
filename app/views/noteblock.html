@@ -1,7 +1,6 @@
 <div ng-controller="noteCtrl">	
 <form  name="form" novalidate>
-	<textarea style="overflow:none;" class="note col-xs-12" ng-class="note.Color" type="text" ng-model="note.Content" required data-fittext contenteditable>
-	</textarea>
+	<textarea style="overflow:none;" class="note col-xs-12" ng-class="note.Color" type="text" ng-model="note.Content" required id="note-content" ng-keyup="textResize()"></textarea>
 	<div class="btn-group btn-group-justified col-sm-12" role="group">
 		<button ng-repeat="color in colors" class="color-button" ng-class="color" type="button" ng-click="setColor(color)"></button>
 	</div>
