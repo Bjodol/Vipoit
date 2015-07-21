@@ -9,6 +9,16 @@ angular.module('note', ['blackboard'])
 		$scope.addNote = function(){
 			var newNote = angular.copy($scope.note);
 			blackboardService.notes.push(newNote);
+			console.log($scope.note.fontSize);
+		}
+
+		$scope.textResize = function(){
+			var x=document.getElementById("note-content");
+			var minSize = 24;
+			var initialSize=75-x.value.length;
+			initialSize=initialSize<=minSize?minSize:initialSize;
+			x.style.fontSize = initialSize + "px";
+			$scope.note.fontSize = "font-size:" + x.style.fontSize;
 		}
 
 		$scope.setColor = function(color){

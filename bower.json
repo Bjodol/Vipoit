@@ -10,8 +10,10 @@
     "angular-route": "^1.3.0",
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
+
     "angular-gridster": "~0.13.5",
     "jquery-resize": "*"
+
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

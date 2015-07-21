@@ -1,24 +1,13 @@
 <div ng-controller="noteCtrl">	
 <form  name="form" novalidate>
-
-	<p> Content </p><input class="note col-xs-12" ng-class="note.Color" type="text" ng-model="note.Content" required>
-
-	
-
-		<div class="btn-group btn-group-justified col-sm-12" role="group">
-		<button ng-repeat="color in colors" class="color-button" ng-class="color" type="button" ng-click="setColor(color)"></button>	
-
+	<textarea style="overflow:none;" class="note col-xs-12" ng-class="note.Color" type="text" ng-model="note.Content" required id="note-content" ng-keyup="textResize()"></textarea>
+	<div class="btn-group btn-group-justified col-sm-12" role="group">
+		<button ng-repeat="color in colors" class="color-button" ng-class="color" type="button" ng-click="setColor(color)"></button>
 	</div>
 </form>
 
-	
-	<button 
+<button 
 	ng-disabled="form.$invalid" class="btn add-btn" type="submit" ng-click="addNote(note)"> Add Note </button>
-
-	<p
-		class="help-block"
-		ng-show"You must fill in content in order to make a note"
-		>Fill in content in order to make a note</p>
-
-
+	<p class="help-block" ng-show"You must fill in content in order to make a note">	Fill in content in order to make a note
+	</p>
 </div>
