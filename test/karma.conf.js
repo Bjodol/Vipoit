@@ -33,6 +33,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/javascript-detect-element-resize/detect-element-resize.js',
       'bower_components/angular-gridster/src/angular-gridster.js',
+      'bower_components/easeljs/lib/easeljs-0.8.1.combined.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

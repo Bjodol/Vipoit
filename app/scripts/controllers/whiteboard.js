@@ -32,6 +32,32 @@ angular.module('whiteboard',[
       }
 	}
 
+	 $scope.init = function(){
+
+	 	var stage = new createjs.Stage("demoCanvas");
+	 	var circle = new createjs.Shape();
+		circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
+		circle.x = 100;
+		circle.y = 100;
+
+		// <!-- drag and drop -->
+
+		circle.addEventListener("pressmove", function(event) { })
+
+		circle.addEventListener("pressup", function(event) { })
+	
+		circle.on("pressmove", function(evt) {
+	 	 evt.target.x = evt.stageX;
+   		 evt.target.y = evt.stageY; 	
+		})
+
+		circle.on("pressup", function(evt) { console.log("up"); })
+
+		stage.addChild(circle);
+		stage.update();
+		console.log("Hei bJørn");
+	}
+
 
 	$scope.doGreeting =function(greeting) {
 		$window.alert(greeting);

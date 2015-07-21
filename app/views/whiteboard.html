@@ -1,5 +1,5 @@
-<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
-	<div gridster="gridsterOpts" >
+<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl" ng-init="init();">
+	<!--<div gridster="gridsterOpts" >
     <ul>
         <div  class="note" ng-class="note.Color" gridster-item="note" style="{{note.fontSize}}" data-sizex="1" data-sizey="1" ng-repeat="note in notes track by $index">
         	{{note.Content}}
@@ -14,6 +14,12 @@
 			</div>
         </div>
     </ul>
+    </div>-->
+
+  	<canvas id="demoCanvas" width="500" height="300"></canvas>
+	
+
+
 </div>
 
 
