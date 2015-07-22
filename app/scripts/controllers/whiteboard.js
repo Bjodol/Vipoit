@@ -12,6 +12,7 @@ angular.module('whiteboard',[
 	])
   .controller('whiteboardCtrl', function($scope, $window, blackboardService) {
     $scope.notes = blackboardService.notes;
+    $scope.htmlElements = blackboardService.htmlElements;
 	$scope.greeting = "This function has not yet been added.";
 	var stage = new createjs.Stage("demoCanvas");
 
@@ -21,23 +22,18 @@ angular.module('whiteboard',[
 			blackboardService.notes.splice(index, 1);
 	}
 
-	$scope.$watchCollection('notes', function(){
+	$scope.$watchCollection('htmlElements', function(){
+		//$scope.addNote = function(){
 		if($scope.notes.length != 0){
-			var noteToCreate = $scope.notes[$scope.notes.length-1];
-
+			var noteToCreate = $scope.htmlElements[$scope.htmlElements.length-1].note;
+			var htmlElement = $scope.htmlElements[$scope.htmlElements.length-1].element;
 			var noteColor = new createjs.Shape();
-			noteColor.graphics.beginFill(noteToCreate.ColorValue).drawRect(-125,-125,250,250);
-			
-			var noteContent = new createjs.Text();
-			noteContent.font = noteToCreate.fontSize + "px 'Just Another Hand', Helvetica, sans-serif"
-			noteContent.text = noteToCreate.Content;
+			noteColor.graphics.beginFill("#ffffff").drawRect(-120,-120,250,250);
+			var noteContent = new createjs.DOMElement(htmlElement.get(0));
 			noteContent.x = noteContent.y = -120;
-			noteContent.textAlign = "left";
-			noteContent.lineHeight = noteToCreate.fontSize + 2;
-			console.log(noteContent.lineHeight);
-			noteContent.lineWidth = 240;
 
 			var note = new createjs.Container();
+			note.addChild(note.Content);
 			note.x = note.y = 250;
 			note.addChild(noteColor, noteContent);
 			stage.addChild(note);
@@ -58,4 +54,14 @@ angular.module('whiteboard',[
 	}
 
 	
+  }).directive('notedirective', function(blackboardService){
+  	return {
+  		link: function(scope, element, attr){
+  			var htmlElement = {};
+  			htmlElement.element = element;
+  			htmlElement.note = blackboardService.notes[blackboardService.notes.length-1];
+  			blackboardService.htmlElements.push(htmlElement);
+			console.log(blackboardService.htmlElements);
+  		}
+  	}
   });

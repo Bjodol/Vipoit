@@ -1,21 +1,9 @@
-<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl" ng-init="init();">
-	<!--<div gridster="gridsterOpts" >
-    <ul>
-        <div  class="note" ng-class="note.Color" gridster-item="note" style="{{note.fontSize}}" data-sizex="1" data-sizey="1" ng-repeat="note in notes track by $index">
-        	{{note.Content}}
-        	<div class="dropdown">
-			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-			<span class="caret"></span></button>
-			<ul class="dropdown-menu">
-			<li><a ng-click="delete(note)">Delete</a></li>
-			<li><a ng-click="doGreeting(greeting)">Edit (todo)</a></li>
-			<li><a ng-click="doGreeting(greeting)">Share(todo)</a></li>
-			</ul>
-			</div>
-        </div>
-    </ul>
-    </div>-->
-
+<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
+    <div ng-repeat="note in notes track by $index">
+    	<div notedirective id='{{note.id}}' class="note note-whiteboard" ng-class="note.Color" style="{{note.fontSize}}">
+   			{{note.Content}}
+    	</div>
+    </div>
   	<canvas id="demoCanvas" width="500" height="300"></canvas>
 </div>
 
