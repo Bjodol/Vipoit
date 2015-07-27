@@ -15,8 +15,8 @@ angular.module('note', ['blackboard'])
 
 		$scope.textResize = function(){
 			var x=document.getElementById("note-content");
-			var minSize = 24;
-			var initialSize=75-x.value.length;
+			var minSize = 32;
+			var initialSize=80-x.value.length;
 			initialSize=initialSize<=minSize?minSize:initialSize;
 			x.style.fontSize = initialSize + "px";
 			$scope.note.fontSize = "font-size:" + x.style.fontSize;

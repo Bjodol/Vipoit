@@ -14,6 +14,8 @@ angular.module('whiteboard',[
     $scope.notes = blackboardService.notes;
     $scope.htmlElements = blackboardService.htmlElements;
 	$scope.greeting = "This function has not yet been added.";
+	$scope.colors = blackboardService.noteColors;
+
 	var stage = new createjs.Stage("demoCanvas");
 
     $scope.delete =function(note){
@@ -51,6 +53,41 @@ angular.module('whiteboard',[
 
 	$scope.doGreeting =function(greeting) {
 		$window.alert(greeting);
+	}
+
+	$scope.setColor = function(color, note){
+		switch(color) {
+      		case 'note-pink':
+         		note.Color = "note-pink";
+         		note.ColorValue = "#eedbf3";
+         	break;
+      		case 'note-yellow':
+		        note.Color = "note-yellow";
+		        note.ColorValue = "#fcf0ad";
+		    break;
+		    case 'note-purple':
+         		note.Color = "note-purple";
+         		note.ColorValue = "#b4a7d6";
+         	break;
+         	case 'note-dark-blue':
+         		note.Color = "note-dark-blue";
+         		note.ColorValue = "#a4c2f4";
+         	break;
+         	case 'note-light-blue':
+         		note.Color = "note-light-blue";
+         		note.ColorValue = "#caf0f3";
+         	break;
+		    case 'note-green':
+         		note.Color = "note-green";
+         		note.ColorValue = "#c5f3c5";
+         	break;
+  		default:
+     		console.log('There should not be a default failover at this thing.');
+		}
+	}
+
+	$scope.deleteNote = function(note){
+		blackboardService.notes.splice(blackboardService.notes.indexOf(note), 1);
 	}
 
 	

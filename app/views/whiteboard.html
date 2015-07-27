@@ -1,7 +1,17 @@
 <div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
     <div ng-repeat="note in notes track by $index">
-    	<div notedirective id='{{note.id}}' class="note note-whiteboard" ng-class="note.Color" style="{{note.fontSize}}">
-   			{{note.Content}}
+    	<div notedirective id='{{note.id}}' class="note clickable-not" ng-class="note.Color" style="{{note.fontSize}}">
+    		<div class="dropdown">
+	    		<button class="btn btn-dropdown dropdown-toggle" type="button" data-toggle="dropdown">
+	    			<i class="fa fa-pencil-square-o"></i>
+	    		</button>
+	    		<ul class="dropdown-menu dropdown-menu-right clickable note-menu">
+					<li ng-repeat="color in colors" class="color-button" ng-class="color" ng-click="setColor(color, note)"></li>
+					<li><a href="#"><i class="fa fa-pencil-square-o"></i> Edit</a></li>
+					<li><a ng-click="deleteNote(note)"><i class="fa fa-trash-o"></i> Delete</a></li>
+				</ul>
+	  		</div>
+	  		<div class="note-content">{{note.Content}}</div>
     	</div>
     </div>
   	<canvas id="demoCanvas" width="500" height="300"></canvas>
