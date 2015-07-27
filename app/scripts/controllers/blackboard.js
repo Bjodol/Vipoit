@@ -16,5 +16,6 @@ angular.module('blackboard', [
 	})
   .service('blackboardService', function (){
     this.notes = [];
+    this.htmlElements = [];
     this.noteColors = ['note-pink', 'note-yellow', 'note-purple', 'note-dark-blue', 'note-light-blue', 'note-green'];
   });
