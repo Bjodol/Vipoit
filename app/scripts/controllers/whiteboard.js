@@ -17,8 +17,15 @@ angular.module('whiteboard',[
 	$scope.doubleClickVar = false;
 	$scope.colors = blackboardService.noteColors;
 
+	window.addEventListener('resize', resize, false);
+	var stage = new createjs.Stage("whiteboard");
+	stage.canvas.width = document.getElementById("whiteboardContainer").offsetWidth;
+	stage.canvas.height = document.getElementById("whiteboardContainer").offsetHeight;
 
-	var stage = new createjs.Stage("demoCanvas");
+	function resize() {
+		stage.canvas.width = document.getElementById("whiteboardContainer").offsetWidth;
+		stage.canvas.height = document.getElementById("whiteboardContainer").offsetHeight;
+	}
 
     $scope.delete =function(note){
 			var index = blackboardService.notes.indexOf(note);
@@ -35,20 +42,11 @@ angular.module('whiteboard',[
 			noteColor.graphics.beginFill("#ffffff").drawRect(-120,-120,250,250);
 			var noteContent = new createjs.DOMElement(htmlElement.get(0));
 			noteContent.x = noteContent.y = -120;
-
-			
-
-
-
-
 			var note = new createjs.Container();
 			note.addChild(note.Content);
 			note.x = note.y = 250;
 			note.addChild(noteColor, noteContent);
-
-
 			stage.addChild(note);
-
 			// Drag and drop functionality
 			note.on("pressmove", function(evt) {
 				evt.currentTarget.x = evt.stageX;
