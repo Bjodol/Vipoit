@@ -13,6 +13,7 @@ angular.module('whiteboard',[
   .controller('whiteboardCtrl', function($scope, $window, blackboardService) {
     $scope.notes = blackboardService.notes;
 	$scope.greeting = "This function has not yet been added.";
+	$scope.doubleClickVar = false;
 	var stage = new createjs.Stage("demoCanvas");
 
     $scope.delete =function(note){
@@ -37,11 +38,19 @@ angular.module('whiteboard',[
 			console.log(noteContent.lineHeight);
 			noteContent.lineWidth = 240;
 
+			
+
+
+
+
 			var note = new createjs.Container();
 			note.x = note.y = 250;
 			note.addChild(noteColor, noteContent);
+
+
 			stage.addChild(note);
 
+			// Drag and drop functionality
 			note.on("pressmove", function(evt) {
 				evt.currentTarget.x = evt.stageX;
 		   		evt.currentTarget.y = evt.stageY; 	
@@ -50,6 +59,15 @@ angular.module('whiteboard',[
 
 			note.on("pressup", function(evt) { console.log("up"); })
 			stage.update();
+
+			// Double Click functionality.
+
+			note.on("dblclick", function (evt){
+				console.log("doubleTrouble");
+			})
+
+
+
 		}
 	});
 
