@@ -1,4 +1,4 @@
-<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl">
+<div ng-controller="whiteboardCtrl" ng-controller="noteCtrl" ng-init="whiteboardInit()" style="z-index: -1">
     <div ng-repeat="note in notes track by $index">
     	<div notedirective id='{{note.id}}' class="note clickable-not" ng-class="note.Color" style="{{note.fontSize}}">
     		<div class="dropdown">
@@ -14,7 +14,7 @@
 	  		<div class="note-content">{{note.Content}}</div>
     	</div>
     </div>
-  	<canvas id="demoCanvas" width="500" height="300"></canvas>
+  	<canvas id="whiteboard" width="100%" height="100%"></canvas>
 
 </div>
 

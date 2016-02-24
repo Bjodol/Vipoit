@@ -5,6 +5,7 @@
 	font: 80px 'Just Another Hand', Helvetica, sans-serif;
     word-wrap: break-word;
     resize: none;
+    display: block;
 }
 
 .note-content {
@@ -33,7 +34,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 0;
 }
 
 .note-yellow {
